@@ -9668,6 +9668,14 @@ span.checked {
   color: orange;
 }
 
+.card-img-top {
+  max-width: 80%;
+  height: 230px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0;
+}
+
 /* PARTNER PAGE STYLES */
 .partner_img_main {
   max-width: 100%;
@@ -9720,6 +9728,26 @@ span.checked {
 
 @media (max-width: 576px) {
   /* xs display */
+  #landing_content {
+    margin-top: 35vh !important;
+  }
+  #landing_content h2 {
+    text-align: center;
+  }
+  #landing_content p {
+    text-align: center;
+    max-width: 95% !important;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    opacity: .8;
+  }
+  #landing_content a {
+    display: block;
+    max-width: 80% !important;
+    margin: 0 auto;
+  }
   .about_bg {
     top: 150vh !important;
   }
@@ -9731,8 +9759,11 @@ span.checked {
   .about h2 {
     margin-bottom: 0 !important;
   }
+  .about .service {
+    margin-bottom: 15px !important;
+  }
   .about .service img {
-    width: 40% !important;
+    width: 60% !important;
   }
   .about .service p {
     padding: 0 !important;
@@ -9743,6 +9774,9 @@ span.checked {
   }
   section.try h1 {
     color: #f8f9fa !important;
+  }
+  .card {
+    margin: 15px auto;
   }
 }
 
@@ -9780,10 +9814,6 @@ span.checked {
   #landing_content {
     margin-top: 180px;
     padding-left: 10px;
-  }
-  #landing_content h1,
-  #landing_content p {
-    max-width: 50% !important;
   }
   .about {
     margin-top: 45vh;
