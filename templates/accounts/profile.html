@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section class="container mt-5">
+  {% include 'partials/_message.html' %}
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img class="d-block mx-auto" id="profile_img" src="{% static 'img/user.svg' %}" alt="profile">
+    </div>
+    <div class="col-xs-12 col-sm-8 p-4">
+      <h2 class="text-uppercase mb-5">{{user.first_name}}</h2>
+      <p><span class="font-weight-bold">Username: </span>{{user.username}}</p>
+      <p><span class="font-weight-bold">Email: </span>{{user.email}}</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

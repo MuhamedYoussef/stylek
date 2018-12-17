@@ -1,0 +1,163 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<body id="index">
+  {% include 'partials/_message.html' %}
+  <section class="bg landing">
+    <img src="{% static 'img/landing_bg.svg' %}" alt="bg" />
+  </section>
+  <section class="bg about_bg_extend">
+    <img src="{% static 'img/about/about_bg_extend.svg' %}" alt="bg" />
+  </section>
+  <section class="bg about_bg">
+    <img src="{% static 'img/about/about_bg.svg' %}" alt="bg" />
+  </section>
+
+  <!-- Landing section -->
+  <div id="landing_content" class="container">
+    <h2 id="landing_header" class="text-light display-4">CHECK OUT NOW!</h2>
+    <p class="text-light mb-5">
+      How we can save you a lot of time and money! And the best part is it is
+      EASY and FREE
+    </p>
+    <a
+      class="btn btn-light text-primary px-5 font-weight-bold shadow"
+      href="{% url 'search' %}"
+    >
+      SEARCH
+    </a>
+  </div>
+
+  <!-- About Section -->
+  <section class="container mb-5 pb-5 about">
+    <h2 id="about_head" class="text-center text-primary mb-5 py-5 display-4">
+      ABOUT OUR SERVICES
+    </h2>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="service mb-5">
+          <img
+            src="{% static 'img/about/simple.svg' %}"
+            class="d-block mx-auto"
+            alt="simple"
+          />
+          <p class="h6 text-primary mx-auto pl-5">
+            Time is everything, we do appreciate yours, our service is simple
+            and easy, just search about what you want and you will find it right
+            away!
+          </p>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="service mb-5">
+          <img
+            src="{% static 'img/about/blog.svg' %}"
+            class="d-block mx-auto"
+            alt="blog"
+          />
+          <p class="h6 text-primary mx-auto pl-5">
+            So existed part of our application is the blog, wonderful community
+            with amazing ideas
+          </p>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="service">
+          <img
+            src="{% static 'img/about/shoping.svg' %}"
+            class="d-block mx-auto"
+            alt="shoping"
+          />
+          <p class="h6 text-primary mx-auto pl-5">
+            It was never been easier, with our opening soon section for online
+            shopping store, get what you want or book it for buying later.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="service">
+          <img
+            src="{% static 'img/about/reliable.svg' %}"
+            class="d-block mx-auto"
+            alt="reliable"
+          />
+          <p class="h6 text-primary mx-auto pl-5">
+            We are doing our best to keep all the information on the site up
+            dated and making sure it all true
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRY US NOW! -->
+  <section class="container try">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-primary mb-4">TRY US NOW!</h1>
+        <a
+          class="btn btn-primary text-light px-5 font-weight-bold shadow"
+          id="try_link"
+          href="{% url 'search' %}"
+        >
+          SEARCH
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL SECTION -->
+  <section class="social mb-5 pb-5">
+    <div class="container padding">
+      <div class="row text-center">
+        <div class="col-12">
+          <h2 class="text-primary">KEEP ON TOUCH</h2>
+          <br />
+          <a href="https://www.facebook.com/Stylek.Official/" class="px-4" target="_blank"
+            ><img src="{% static 'img/social/facebook.svg' %}" alt="fb"
+          /></a>
+          <a href="#" class="px-4"
+            ><img src="{% static 'img/social/insta.svg' %}" alt="insta"
+          /></a>
+          <a href="#" class="px-4"
+            ><img src="{% static 'img/social/twitter.svg' %}" alt="twitter"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-5 p-4">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6">
+          <img src="{% static 'img/logo.svg' %}" alt="logo" />
+          <hr />
+          <p>Mohamed Youssef</p>
+          <p>mu7med.youssef@gmail.com</p>
+          <p>Cairo, Egypt</p>
+        </div>
+
+        <div class="col-md-3 mt-5">
+          <h5>SERVICES</h5>
+          <hr />
+          <p>Search</p>
+          <p>Blog</p>
+
+        </div>
+
+        <div class="col-md-3 mt-5">
+          <h5>SOCIAL MEDIA</h5>
+          <hr />
+          <p>Facebook</p>
+          <p>Instagram</p>
+          <p>Twitter</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+{% endblock %}

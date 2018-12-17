@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}| {{ partner.name }}{% endblock %}
+
+{% block content %}
+<body>
+  <section class="container">
+    <div class="row mt-5">
+      <div class="col-sm-12 col-md-4 mb-4">
+        <a href="{{partner.main_photo.url}}" data-lightbox="main">
+          <img
+            class="partner_img_main mx-auto d-block shadow-sm"
+            src="{{partner.main_photo.url}}"
+            alt="main"
+          />
+          <!-- <img
+            class="partner_img_main mx-auto d-block shadow-sm"
+            src="https://dresseskhazana.com/wp-content/uploads/2017/01/Girl-Winter-Gloves.jpg"
+            alt="main"
+          /> -->
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <h3>{{partner.name}}</h3>
+        {% if not partner.about == 'Not_available' %}
+        <p>{{partner.about}}</p>
+        {% endif %}
+        <h5 class="mt-5">Categories</h5>
+        <!-- <p>Beauty Salon - Spa Center - Hairdresser</p> -->
+        <p>
+        {% for cat in partner.cats %}
+          <span class="mr-3">{{cat}}</span> 
+        {% endfor %}
+      </p>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row mt-4">
+      <div class="col-sm-12 col-md-4 mb-4">
+        <h5 class="mb-3">More Detials</h5>
+        <p><i class="fas fa-map-marker"></i> {{partner.address}}</p>
+        <p><i class="fas fa-phone"></i> {{partner.number}}</p>
+        {% if not partner.link == 'Not_available' %}
+        <a href="{{partner.link}}" target="_blank"><i class="fas fa-globe-africa"></i> {{partner.link}}</a>
+        {% endif %}
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <h5 class="mb-3">Gallery</h5>
+        <a href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <a href="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <a href="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <!-- SECOND SECTION REPEATED -->
+        <a href="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <a href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <a href="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <!-- THIRD SECTION REPEATED -->
+        <a href="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <a href="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        <a href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" data-lightbox="images">
+          <img src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" class="partner_img m-2 shadow-sm" />
+        </a>
+        
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock %}

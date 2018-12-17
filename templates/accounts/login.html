@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+
+{% block title %}| Login{% endblock %}
+
+{% block content %}
+<body class="join">
+  {% include 'partials/_message.html' %}
+  <div class="container">
+    <form class="join" action="{% url 'login' %}" method="POST" >
+      {% csrf_token %}
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          name="username"
+          placeholder="Your username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          placeholder="Your Password"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary px-5 font-weight-bold btn-block mt-4"
+      >
+        Login
+      </button>
+      <br />
+      <a href="{% url 'register' %}" class="mt-3">Need an account? Register</a>
+    </form>
+  </div>
+</body>
+{% endblock %}
