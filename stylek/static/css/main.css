@@ -9563,6 +9563,10 @@ p {
   line-height: 1.2;
 }
 
+body {
+  color: #54005E;
+}
+
 /* BACKGROUND SECTION */
 #user {
   width: 30px;
@@ -9600,16 +9604,16 @@ p {
   max-width: 60%;
 }
 
-/* ABOUT */
-.about {
+/* SERVICES */
+.services {
   margin-top: 65vh;
 }
 
-.about .service img {
+.services .service img {
   width: 60%;
 }
 
-.about .service p {
+.services .service p {
   width: 70%;
 }
 
@@ -9619,10 +9623,10 @@ section.try {
   text-align: right;
 }
 
-/* Shopping Sectio */
+/* Shopping Section */
 .shopping {
   margin-top: 500px;
-  padding: 200px 0;
+  padding: 200px 0px;
 }
 
 /* FOOTER */
@@ -9664,16 +9668,6 @@ form.join {
 }
 
 /* SEARCH */
-.card-text {
-  font-size: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-
 span.checked {
   color: orange;
 }
@@ -9731,7 +9725,7 @@ span.checked {
   .about_bg_extend {
     display: none;
   }
-  .about {
+  .services {
     background: #fff3f3 !important;
   }
 }
@@ -9761,21 +9755,21 @@ span.checked {
   .about_bg {
     top: 150vh !important;
   }
-  .about {
+  .services {
     margin-top: 110px !important;
     text-align: center;
     padding: 25px;
   }
-  .about h2 {
+  .services h2 {
     margin-bottom: 0 !important;
   }
-  .about .service {
+  .services .service {
     margin-bottom: 15px !important;
   }
-  .about .service img {
+  .services .service img {
     width: 60% !important;
   }
-  .about .service p {
+  .services .service p {
     padding: 0 !important;
   }
   section.try {
@@ -9791,16 +9785,16 @@ span.checked {
 }
 
 @media (max-width: 768px) {
-  .about {
+  .services {
     margin-top: 25vh;
   }
-  .about h2 {
+  .services h2 {
     margin-bottom: 0 !important;
   }
-  .about .service img {
+  .services .service img {
     width: 70%;
   }
-  .about .service p {
+  .services .service p {
     width: 100%;
   }
   section.try {
@@ -9825,10 +9819,10 @@ span.checked {
     margin-top: 180px;
     padding-left: 10px;
   }
-  .about {
+  .services {
     margin-top: 45vh;
   }
-  .about h2 {
+  .services h2 {
     margin-bottom: 0 !important;
   }
   section.social {

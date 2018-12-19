@@ -26,8 +26,8 @@
     </a>
   </div>
 
-  <!-- About Section -->
-  <section class="container mb-5 pb-5 about">
+  <!-- Services Section -->
+  <section class="container mb-5 pb-5 services">
     <h2 id="about_head" class="text-center text-primary mb-5 py-5 display-4">
       ABOUT OUR SERVICES
     </h2>
@@ -112,7 +112,7 @@
   <section class="shopping text-center">
     <h1>Shopping Section</h1>
     <h4>We got all you need</h4>
-    <button class="btn btn-light shadow">Comming Soon..</button>
+    <button class="btn btn-light text-primary shadow mt-2">Comming Soon..</button>
   </section>
 
   <!-- FOOTER -->
@@ -122,13 +122,13 @@
         <div class="col-md-3 mb-5">
           <img src="{% static 'img/logo.svg' %}" alt="logo" />
           <hr />
-          <a class="d-block" href="#">About us</a>
+          <a class="d-block" href="{% url 'about' %}">About us</a>
         </div>
 
         <div class="col-md-3 mb-5 pt-4">
           <h5>Services</h5>
           <hr />
-          <a class="d-block" href="#">Search</a>
+          <a class="d-block" href="{% url 'search' %}">Search</a>
           <a class="d-block" href="#">Shopping</a>
         </div>
 
@@ -137,11 +137,11 @@
           <hr />
           <a class="d-block" href="#">Blog</a>
         </div>
-
+        
         <div class="col-md-3 mb-5 pt-4">
-          <h5>Our links</h5>
+          <h5>Future links</h5>
           <hr />
-          <p>Blog</p>
+          <a class="d-block" href="#">Another link</a>
         </div>
       </div>
 

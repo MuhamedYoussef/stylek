@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}| About{% endblock %}
 
 {% block content %}
-<section class="container">
+<section class="container mb-5 pb-5">
   <div class="my-5">
-    <h3 class="mt-5">About Stylek</h3>
+    <img class="mx-auto d-block" src="{% static 'img/stylek.gif' %}" alt="Stylek">
+    <h3>About Stylek</h3>
     <p>This project intend to provide information about beauty salons, spa centers photographers and gyms in Egypt. Aside that we have a wonderful blog with easy access to whatever field you prefer</p>
     <h5>Current Features</h5>
     <p>Search over tons of beauty salons in Egypt, findout who is near your district or city, access their phone number, address and website if avialable</p>
