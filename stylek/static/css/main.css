@@ -9779,6 +9779,9 @@ span.checked {
   section.try h1 {
     color: #f8f9fa !important;
   }
+  .shopping {
+    margin-top: 100px;
+  }
   .card {
     margin: 15px auto;
   }
@@ -9825,11 +9828,8 @@ span.checked {
   .services h2 {
     margin-bottom: 0 !important;
   }
-  section.social {
-    margin-top: 400px;
-  }
-  section.social h2 {
-    color: #f8f9fa !important;
+  .shopping {
+    color: #fff;
   }
 }
 /*# sourceMappingURL=main.css.map */
