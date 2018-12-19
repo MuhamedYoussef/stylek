@@ -23,7 +23,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') or config['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG') or config['DEBUG']
 
-ALLOWED_HOSTS = ['https://stylek.herokuapp.com']
+ALLOWED_HOSTS = ['stylek.herokuapp.com']
 
 
 # Application definition
