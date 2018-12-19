@@ -32,7 +32,7 @@
           <a class="nav-link font-weight-bold" href="#">BLOG</a>
         </li>
         <li class="nav-item mr-4 {%if 'about' in request.path%}active{%endif%}">
-          <a class="nav-link font-weight-bold" href="{% url 'about' %}">About</a>
+          <a class="nav-link font-weight-bold" href="{% url 'about' %}">ABOUT</a>
         </li>
       </ul>
       {% if user.is_authenticated %}
