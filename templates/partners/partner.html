@@ -7,7 +7,10 @@
 {% block content %}
 <body>
   <section class="container">
-    <div class="row mt-5">
+    <a href="javascript:history.back()" class="btn btn-light text-primary mt-4 mb-3">
+        <i class="fas fa-long-arrow-alt-left"></i> BACK
+    </a>
+    <div class="row">
       <div class="col-sm-12 col-md-4 mb-4">
         <a href="{{partner.main_photo.url}}" data-lightbox="main">
           <img
@@ -15,11 +18,6 @@
             src="{{partner.main_photo.url}}"
             alt="main"
           />
-          <!-- <img
-            class="partner_img_main mx-auto d-block shadow-sm"
-            src="https://dresseskhazana.com/wp-content/uploads/2017/01/Girl-Winter-Gloves.jpg"
-            alt="main"
-          /> -->
         </a>
       </div>
       <div class="col-sm-12 col-md-8">
@@ -27,27 +25,36 @@
         {% if not partner.about == 'Not_available' %}
         <p>{{partner.about}}</p>
         {% endif %}
-        <h5 class="mt-5">Categories</h5>
-        <!-- <p>Beauty Salon - Spa Center - Hairdresser</p> -->
+        <h5 class="font-weight-bold mt-5">Categories:</h5>
         <p>
         {% for cat in partner.cats %}
           <span class="mr-3">{{cat}}</span> 
         {% endfor %}
+      </p>
+      <p class="font-weight-bold">Rating:
+        <span class="fa fa-star {%if partner.rating >= 1%} checked {%endif%}"></span>
+        <span class="fa fa-star {%if partner.rating >= 2%} checked {%endif%}"></span>
+        <span class="fa fa-star {%if partner.rating >= 3%} checked {%endif%}"></span>
+        <span class="fa fa-star {%if partner.rating >= 4%} checked {%endif%}"></span>
+        <span class="fa fa-star {%if partner.rating >= 5%} checked {%endif%}"></span>
       </p>
       </div>
     </div>
     <br /><br />
     <div class="row mt-4">
       <div class="col-sm-12 col-md-4 mb-4">
-        <h5 class="mb-3">More Detials</h5>
-        <p><i class="fas fa-map-marker"></i> {{partner.address}}</p>
-        <p><i class="fas fa-phone"></i> {{partner.number}}</p>
+        <h5 class="font-weight-bold mb-3">More Detials</h5>
+        <hr>
         {% if not partner.link == 'Not_available' %}
-        <a href="{{partner.link}}" target="_blank"><i class="fas fa-globe-africa"></i> {{partner.link}}</a>
+        <p class="font-weight-bold">
+          <a href="{{partner.link}}" target="_blank"><i class="fas fa-globe-africa"></i> Visit Website</a>
+        </p>
         {% endif %}
+        <p><i class="fas fa-phone"></i> {{partner.number}}</p>
+        <p><i class="fas fa-map-marker"></i> {{partner.address}}</p>
       </div>
       <div class="col-sm-12 col-md-8">
-        <h5 class="mb-3">Gallery</h5>
+        <h5 class="font-weight-bold mb-3">Gallery</h5>
         <a href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" data-lightbox="images">
           <img src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" class="partner_img m-2 shadow-sm" />
         </a>

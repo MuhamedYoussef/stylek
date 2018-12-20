@@ -128,11 +128,11 @@
           <li class="list-group-item">City: {{partner.city}}</li>
           <li class="list-group-item">
             Rating: 
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
+            <span class="fa fa-star {%if partner.rating >= 1%} checked {%endif%}"></span>
+            <span class="fa fa-star {%if partner.rating >= 2%} checked {%endif%}"></span>
+            <span class="fa fa-star {%if partner.rating >= 3%} checked {%endif%}"></span>
+            <span class="fa fa-star {%if partner.rating >= 4%} checked {%endif%}"></span>
+            <span class="fa fa-star {%if partner.rating >= 5%} checked {%endif%}"></span>
           </li>
         </ul>
       </div>
