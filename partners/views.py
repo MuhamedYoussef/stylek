@@ -21,6 +21,18 @@ def search(request):
         district = request.GET['district']
         if district:
             partners_list = partners_list.filter(district__iexact=district)
+    
+    if 'spa' in request.GET:
+        partners_list = partners_list.filter(cats__icontains='spa')
+
+    if 'beauty' in request.GET:
+        partners_list = partners_list.filter(cats__icontains='beauty')
+    
+    if 'weight_control' in request.GET:
+        partners_list = partners_list.filter(cats__icontains='weight')
+            
+    if 'photographers' in request.GET:
+        partners_list = partners_list.filter(cats__icontains='photographers')
             
     paginator = Paginator(partners_list, 20)
     page = request.GET.get('page')

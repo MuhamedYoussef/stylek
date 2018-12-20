@@ -9668,6 +9668,10 @@ form.join {
 }
 
 /* SEARCH */
+.custom-control-label {
+  cursor: pointer;
+}
+
 span.checked {
   color: orange;
 }

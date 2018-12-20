@@ -123,11 +123,6 @@
           <a href="{% url 'partner' partner.id %}">
             <h6 class="card-title">{{partner.name}}</h6>
           </a>
-          <!-- <p class="card-text">
-            {% if not partner.about == 'Not_available' %}
-              {{partner.about}}
-            {% endif %}
-          </p> -->
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">City: {{partner.city}}</li>
@@ -188,7 +183,6 @@
     {% endif %}
   </nav>
   <br><br><br>
-  {{values.city}}
 </section>
 
 {% endblock %}

@@ -22,7 +22,12 @@ def register(request):
             messages.error(request, 'Email already exist')
             return redirect('register')
 
-        user = User.objects.create_user(first_name=fullname, username=username, email=email, password=password)
+        user = User.objects.create_user(
+            first_name=fullname,
+            username=username,
+            email=email,
+            password=password
+        )
         user.save()
         messages.success(request, 'Account Created')
         return redirect('login')
