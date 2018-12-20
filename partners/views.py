@@ -22,16 +22,16 @@ def search(request):
         if district:
             partners_list = partners_list.filter(district__iexact=district)
     
-    if 'spa' in request.GET:
+    if 'spa' in request.GET and request.GET['spa'] == 'on':
         partners_list = partners_list.filter(cats__icontains='spa')
 
-    if 'beauty' in request.GET:
+    if 'beauty' in request.GET and request.GET['beauty'] == 'on':
         partners_list = partners_list.filter(cats__icontains='beauty')
     
-    if 'weight_control' in request.GET:
+    if 'wc' in request.GET and request.GET['wc'] == 'on':
         partners_list = partners_list.filter(cats__icontains='weight')
             
-    if 'photographers' in request.GET:
+    if 'pg' in request.GET and request.GET['pg'] == 'on':
         partners_list = partners_list.filter(cats__icontains='photographers')
             
     paginator = Paginator(partners_list, 20)

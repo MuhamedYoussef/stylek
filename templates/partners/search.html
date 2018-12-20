@@ -72,13 +72,13 @@
         <input
           class="custom-control-input"
           type="checkbox"
-          name="weight_control"
-          id="weight_control"
-          {% if values.weight_control == 'on' %}
+          name="wc"
+          id="wc"
+          {% if values.wc == 'on' %}
           checked
           {% endif %}
         />
-        <label class="custom-control-label" for="weight_control"
+        <label class="custom-control-label" for="wc"
           >Weight Control</label
         >
       </div>
@@ -86,13 +86,13 @@
         <input
           class="custom-control-input"
           type="checkbox"
-          name="photographers"
-          id="photographers"
-          {% if values.photographers == 'on' %}
+          name="pg"
+          id="pg"
+          {% if values.pg == 'on' %}
           checked
           {% endif %}
         />
-        <label class="custom-control-label" for="photographers"
+        <label class="custom-control-label" for="pg"
           >Photographers</label
         >
       </div>
@@ -147,7 +147,7 @@
 
         {% if partners.has_previous %}
           <li class="page-item">
-            <a class="page-link" href="?page={{ partners.previous_page_number }}" tabindex="-1">Previous</a>
+            <a class="page-link" href="?name={{values.name}}&city={{values.city}}&district={{values.district}}&beauty={{values.beauty}}&spa={{values.spa}}&wc={{values.wc}}&pg={{values.pg}}&page={{ partners.previous_page_number }}" tabindex="-1">Previous</a>
           </li>
         {% else %}
           <li class="page-item disabled">
@@ -159,20 +159,20 @@
         {% for i in partners.paginator.page_range %}
           {% if partners.number == i %}
             {% if not partners.number == 1 %}
-              <li class="page-item" ><a class="page-link" href="?page={{ partners.previous_page_number }}">{{partners.previous_page_number}}</a></li>
+              <li class="page-item" ><a class="page-link" href="?name={{values.name}}&city={{values.city}}&district={{values.district}}&beauty={{values.beauty}}&spa={{values.spa}}&wc={{values.wc}}&pg={{values.pg}}&page={{ partners.previous_page_number }}">{{partners.previous_page_number}}</a></li>
             {% endif %}
             <li class="page-item active"><a class="page-link">{{i}}</a></li>
             {% if not partners.paginator.num_pages == i %}
-              <li class="page-item"><a class="page-link" href="?page={{ partners.next_page_number }}">{{partners.next_page_number}}</a></li>
+              <li class="page-item"><a class="page-link" href="?name={{values.name}}&city={{values.city}}&district={{values.district}}&beauty={{values.beauty}}&spa={{values.spa}}&wc={{values.wc}}&pg={{values.pg}}&page={{ partners.next_page_number }}">{{partners.next_page_number}}</a></li>
             {% endif %}
-            <li class="page-item"><a class="page-link" href="?page={{ partners.paginator.num_pages }}">...{{partners.paginator.num_pages}}</a></li>
+            <li class="page-item"><a class="page-link" href="?name={{values.name}}&city={{values.city}}&district={{values.district}}&beauty={{values.beauty}}&spa={{values.spa}}&wc={{values.wc}}&pg={{values.pg}}&page={{ partners.paginator.num_pages }}">...{{partners.paginator.num_pages}}</a></li>
           {% endif %}
           {% endfor %}
           
 
         {% if partners.has_next %}
           <li class="page-item">
-            <a class="page-link" href="?page={{ partners.next_page_number }}">Next</a>
+            <a class="page-link" href="?name={{values.name}}&city={{values.city}}&district={{values.district}}&beauty={{values.beauty}}&spa={{values.spa}}&wc={{values.wc}}&pg={{values.pg}}&page={{ partners.next_page_number }}">Next</a>
           </li>
         {% else %}
           <li class="page-item disabled">
@@ -183,6 +183,7 @@
     {% endif %}
   </nav>
   <br><br><br>
+  {{partners}}
 </section>
 
 {% endblock %}
