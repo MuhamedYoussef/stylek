@@ -32,7 +32,7 @@
     <div class="row mb-4">
       <div class="col">
         <select name="district" class="custom-select">
-          <option selected disabled>Choose a district</option>
+          <option selected value="">All districts</option>
           {% for key, value in districts.items %}
             <option value="{{key}}"
               {% if key == values.district %}
