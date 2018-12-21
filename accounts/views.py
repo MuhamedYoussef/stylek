@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 
 
 def register(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+
+
     if request.method == 'POST':
         fullname = request.POST['fullname']
         username = request.POST['username'].lower()
@@ -35,6 +39,10 @@ def register(request):
         return render(request, 'accounts/register.html')
 
 def login(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+
+
     if request.method == 'POST':
         username = request.POST['username'].lower()
         password = request.POST['password']
@@ -59,4 +67,6 @@ def logout(request):
     return redirect('index')
 
 def profile(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'accounts/profile.html')

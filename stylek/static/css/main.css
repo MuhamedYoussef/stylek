@@ -9606,11 +9606,11 @@ body {
 
 /* SERVICES */
 .services {
-  margin-top: 65vh;
+  margin-top: 50vh;
 }
 
 .services .service img {
-  width: 60%;
+  width: 65%;
 }
 
 .services .service p {
@@ -9619,13 +9619,13 @@ body {
 
 /* TRY US NOW */
 section.try {
-  margin-top: 350px;
+  margin-top: 300px;
   text-align: right;
 }
 
 /* Shopping Section */
 .shopping {
-  margin-top: 500px;
+  margin-top: 450px;
   padding: 200px 0px;
 }
 
@@ -9793,7 +9793,7 @@ span.checked {
 
 @media (max-width: 768px) {
   .services {
-    margin-top: 25vh;
+    margin-top: 40vh;
   }
   .services h2 {
     margin-bottom: 0 !important;
@@ -9825,9 +9825,6 @@ span.checked {
   #landing_content {
     margin-top: 180px;
     padding-left: 10px;
-  }
-  .services {
-    margin-top: 45vh;
   }
   .services h2 {
     margin-bottom: 0 !important;
