@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from .models import Partner
 from .data import cities, districts
@@ -48,7 +48,7 @@ def search(request):
 
 
 def partner(request, partner_id):
-    partner = Partner.objects.filter(id=partner_id).first()
+    partner = get_object_or_404(Partner, id=partner_id)
     context = {
         'partner': partner
     }
