@@ -9564,7 +9564,7 @@ p {
 }
 
 body {
-  color: #54005E;
+  color: #333;
 }
 
 /* BACKGROUND SECTION */
@@ -9576,13 +9576,15 @@ body {
 
 .bg {
   position: absolute;
+  max-width: 100%;
   left: 0;
-  width: 100%;
-  z-index: -1;
+  right: 0;
+  z-index: -10;
 }
 
 .landing {
   top: 0;
+  bottom: 0;
 }
 
 .about_bg {
@@ -9595,18 +9597,21 @@ body {
 
 /* LANDING */
 #landing_content {
-  margin-top: 200px;
-  padding-left: 50px;
+  width: 100%;
+  height: 85vh;
 }
 
-#landing_content h1,
-#landing_content p {
-  max-width: 60%;
+#landing_content .landing_text {
+  margin-top: 30vh;
+  color: #c802de;
+  max-width: 200px;
+  text-align: right;
 }
 
 /* SERVICES */
 .services {
-  margin-top: 50vh;
+  width: 100%;
+  min-height: 120vh;
 }
 
 .services .service img {
@@ -9619,28 +9624,31 @@ body {
 
 /* TRY US NOW */
 section.try {
-  margin-top: 300px;
+  width: 100%;
+  min-height: 50vh;
+  margin-top: 200px;
   text-align: right;
 }
 
 /* Shopping Section */
 .shopping {
-  margin-top: 450px;
   padding: 200px 0px;
 }
 
 /* FOOTER */
 footer {
-  background: #54005E;
+  background: #54005e;
 }
 
 footer img {
   width: 100px;
 }
 
-footer a, footer p, footer h5 {
+footer a,
+footer p,
+footer h5 {
   color: #fff;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 footer a:hover {
@@ -9667,7 +9675,7 @@ form.join {
   margin-top: 20vh;
 }
 
-/* SEARCH */
+/* Partners */
 .custom-control-label {
   cursor: pointer;
 }
@@ -9682,6 +9690,11 @@ span.checked {
   display: block;
   margin: 0 auto;
   border-radius: 0;
+}
+
+.result .card:hover {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
 }
 
 /* PARTNER PAGE STYLES */
@@ -9721,70 +9734,38 @@ span.checked {
 }
 
 /*****************************************************/
+/******************** MEDIA QURIES *******************/
 /*****************************************************/
-/* MEDIA QURIES*/
-@media (max-width: 450px) {
-  /* less than xs display */
-  .about_bg,
-  .about_bg_extend {
-    display: none;
-  }
-  .services {
-    background: #fff3f3 !important;
-  }
-}
-
 @media (max-width: 576px) {
   /* xs display */
-  #landing_content {
-    margin-top: 40vh !important;
-  }
-  #landing_content h2 {
-    text-align: center;
-  }
-  #landing_content p {
-    text-align: center;
-    max-width: 95% !important;
-    margin: 0 auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    opacity: .8;
-  }
   #landing_content a {
     display: block;
     max-width: 80% !important;
     margin: 0 auto;
   }
-  .about_bg {
-    top: 150vh !important;
+  .about_bg,
+  .about_bg_extend {
+    display: none;
   }
   .services {
-    margin-top: 110px !important;
     text-align: center;
-    padding: 25px;
+    padding: 35px 25px;
+    background-color: #fff3f3 !important;
+    border-radius: 0px 50px;
   }
   .services h2 {
-    margin-bottom: 0 !important;
+    font-size: 2.2rem;
+    font-weight: bold;
   }
   .services .service {
-    margin-bottom: 15px !important;
+    margin-bottom: 20px !important;
   }
   .services .service img {
     width: 60% !important;
   }
   .services .service p {
     padding: 0 !important;
-  }
-  section.try {
-    margin-top: 150px;
-    text-align: center !important;
-  }
-  section.try h1 {
-    color: #f8f9fa !important;
-  }
-  .shopping {
-    margin-top: 100px;
+    margin-left: 0 !important;
   }
   .card {
     margin: 15px auto;
@@ -9792,8 +9773,11 @@ span.checked {
 }
 
 @media (max-width: 768px) {
-  .services {
-    margin-top: 40vh;
+  .about_bg_extend {
+    top: 105vh;
+  }
+  .about_bg {
+    top: 150vh !important;
   }
   .services h2 {
     margin-bottom: 0 !important;
@@ -9803,12 +9787,6 @@ span.checked {
   }
   .services .service p {
     width: 100%;
-  }
-  section.try {
-    margin-top: 400px;
-  }
-  section.try h1 {
-    color: #f8f9fa !important;
   }
 }
 
@@ -9826,11 +9804,31 @@ span.checked {
     margin-top: 180px;
     padding-left: 10px;
   }
+  #landing_content .landing_text {
+    color: #f8f9fa;
+  }
+  #landing_content #search {
+    background-color: #f8f9fa;
+    border: #f8f9fa;
+    color: #c802de !important;
+  }
+  #landing_content #who {
+    border-color: #f8f9fa !important;
+    color: #f8f9fa !important;
+  }
   .services h2 {
     margin-bottom: 0 !important;
   }
+  .try,
   .shopping {
-    color: #fff;
+    text-align: center !important;
+  }
+  .try h1,
+  .shopping h1 {
+    color: #f8f9fa !important;
+  }
+  .try a {
+    border-color: #f8f9fa !important;
   }
 }
 /*# sourceMappingURL=main.css.map */
