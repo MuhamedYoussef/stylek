@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% load static %}
+
+<!-- blog content -->
+{% block content %}
+<main class="blog">
+  
+
+  <section class="container my-5">
+    <h3 class="pt-5 display-4">Latest posts</h3>
+    <hr class="mb-5" />
+    {% for post in posts %}
+    <div class="row blog_post p-3 shadow my-4" style="max-width: 700px;">
+      <div class="col-sm-12 col-md-4 p-0 d-flex align-items-center">
+        <a href="{% url 'post' slug=post.slug %}">
+          <img
+            src="
+            {% if post.image %}
+              {{ post.image.url }}
+            {%else%}
+              {{ post.image_url }}
+            {% endif %}"
+            class="img-fluid mx-auto my-auto d-block"
+          />
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <a class="post_title" href="{% url 'post' slug=post.slug %}">
+          <h3>{{ post.title }}</h3>
+        </a>
+        <p class="text-light">
+          <span class="bg-primary py-1 px-2 mr-2 rounded">
+            <i class="fas fa-user"></i>
+            <!-- Full name of user -->
+            {{ post.owner.first_name }} {{ post.owner.last_name }}
+          </span>
+          <span class="bg-primary py-1 pr-2 rounded">
+            <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
+          </span>
+        </p>
+        <p class="post_content">
+          {{ post.summary }}...
+          <a href="{% url 'post' slug=post.slug %}">Read more</a>
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+</main>
+{% endblock %}

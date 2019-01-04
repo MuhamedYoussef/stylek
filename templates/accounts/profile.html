@@ -1,19 +1,52 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %}
 
-
+<!-- blog content -->
 {% block content %}
-<section class="container mt-5">
-  {% include 'partials/_message.html' %}
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <img class="d-block mx-auto" id="profile_img" src="{% static 'img/user.svg' %}" alt="profile">
+<main class="profile text-dark">
+  <section class="container mt-5">
+    {% include 'partials/_message.html' %}
+    <div class="row">
+      <div class="col-4">
+        <img
+          class="img-fluid d-block mx-auto rounded-circle"
+          id="profile_img"
+          src="
+            {% if user.profile.image %}
+              {{ user.profile.image.url }}
+            {% else %}
+              {% static 'img/user.svg' %}
+            {% endif %}
+          "
+          alt="profile"
+          style="width:45%; min-width:100px; max-width:160px;"
+        />
+      </div>
+      <div class="col-8 p-4">
+        <div class="row mb-5" style="max-width:90%">
+          <div class="col-md-12 col-lg-8">
+            <h2 class="text-uppercase mb-4  mr-3 d-inline-block">
+              {{ user.first_name }} {{ user.last_name }}
+            </h2>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <a
+              class="btn btn-light text-dark text-capitalize btn-block"
+              href="{% url 'edit' %}"
+            >
+              Edit Profile <i class="fas fa-cog"></i>
+            </a>
+          </div>
+        </div>
+        <p class="mb-1">
+         {% if user.profile.bio == None or user.profile.bio == ''  %}
+         <span class="font-weight-bold">BIO: </span> 
+         <p class="text-muted">You can edit your profile and add a BIO here</p>
+         {% else %}
+         <span class="font-weight-bold">BIO: </span> <p>{{ user.profile.bio }}</p>
+         {% endif %}
+        </p>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-8 p-4">
-      <h2 class="text-uppercase mb-5">{{user.first_name}}</h2>
-      <p><span class="font-weight-bold">Username: </span>{{user.username}}</p>
-      <p><span class="font-weight-bold">Email: </span>{{user.email}}</p>
-    </div>
-  </div>
-</section>
-{% endblock %}
+  </section>
+</main>
+{% endblock%}

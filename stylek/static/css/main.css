@@ -9567,10 +9567,14 @@ body {
   color: #333;
 }
 
+textarea {
+  border-radius: 10px !important;
+}
+
 /* BACKGROUND SECTION */
 #user {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
 }
 
@@ -9632,6 +9636,8 @@ section.try {
 
 /* Shopping Section */
 .shopping {
+  width: 100%;
+  min-height: 80vh;
   padding: 200px 0px;
 }
 
@@ -9692,7 +9698,7 @@ span.checked {
   border-radius: 0;
 }
 
-.result .card:hover {
+.card:hover, .blog_post:hover {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
 }
@@ -9710,13 +9716,9 @@ span.checked {
   border-radius: 10px;
 }
 
-/* PROFILE */
-#profile_img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  padding: 2px;
-  border: solid 2px #c802de;
+/* Blog */
+.blog_post img {
+  border-radius: 10px;
 }
 
 /* creating custom toast */

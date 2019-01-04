@@ -10,25 +10,44 @@
     <form class="join" action="{% url 'register' %}" method="POST">
       {% csrf_token %}
       <div class="form-group">
-        <input
-          class="form-control"
-          type="text"
-          name="fullname"
-          placeholder="Full name..."
-        />
+        <div class="row">
+          <div class="col pr-1">
+            <input
+              class="form-control"
+              type="text"
+              name="first"
+              placeholder="First name..."
+              minlength="3" 
+              required
+            />
+          </div>
+          <div class="col pl-1">
+            <input
+              class="form-control"
+              type="text"
+              name="last"
+              placeholder="Last name..."
+              minlength="3" 
+              required
+            />
+          </div>
+        </div>
       </div>
       <div class="form-group">
-        <input
-          class="form-control"
-          type="text"
-          id="username"
-          name="username"
-          aria-describedby="usernamehelp"
-          placeholder="Username..."
-        />
-        <small id="usernamehelp" class="form-text text-muted"
-          >Your username should be unique</small
-        >
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input
+            class="form-control"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Pick a Username..."
+            minlength="3" 
+            required
+          />
+        </div>
       </div>
       <div class="form-group">
         <input
@@ -36,6 +55,7 @@
           type="email"
           name="email"
           placeholder="Enter an email"
+          required
         />
       </div>
       <div class="form-group">
@@ -44,6 +64,8 @@
           type="password"
           name="password"
           placeholder="Enter a password"
+          minlength="5" 
+          required
         />
       </div>
       <button

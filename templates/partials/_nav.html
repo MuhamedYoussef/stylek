@@ -29,7 +29,7 @@
           <a class="nav-link font-weight-bold" href="{% url 'index' %}">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link font-weight-bold" href="#">BLOG</a>
+          <a class="nav-link font-weight-bold" href="{% url 'blog' %}">BLOG</a>
         </li>
         <li class="nav-item mr-4 {%if 'about' in request.path%}active{%endif%}">
           <a class="nav-link font-weight-bold" href="{% url 'about' %}"
@@ -47,7 +47,7 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <img id="user" src="{% static 'img/user.svg' %}" alt="user" />
+          <img id="user" src="{% static 'img/user.svg' %}" class="rounded" alt="user" />
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
