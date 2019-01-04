@@ -2,7 +2,7 @@
 
 <!-- blog content -->
 {% block content %} 
-<main class="blog_single_post mb-5">
+<main class="blog_single_post">
   <section class="container-fluid">
     <div class="row">
       <div class="col-md-2"></div>
@@ -17,14 +17,14 @@
           class="img-fluid mx-auto my-auto d-block"
           style="max-height:350px;"
         />
-        <h1 class="post_title text-center pt-5">{{ post.title }}</h1>
-        <p class="text-center text-light" style="font-size: .9rem;">
-          <span class="bg-primary py-1 px-2 mr-2 rounded">
+        <h1 class="post_title text-center pt-1">{{ post.title }}</h1>
+        <p class="text-center text-primary mt-2" style="font-size: 1rem;">
+          <span class="border border-primary py-1 px-2 mr-2 rounded">
             <i class="fas fa-user"></i>
             <!-- Full name of user -->
             {{ post.owner.first_name }} {{ post.owner.last_name }}
           </span>
-          <span class="bg-primary py-1 pr-2 rounded">
+          <span class="border border-primary py-1 pr-2 rounded">
             <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
           </span>
         </p>
