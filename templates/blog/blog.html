@@ -6,7 +6,7 @@
   
 
   <section class="container my-5">
-    <h3 class="pt-5 display-4">Latest posts</h3>
+    <h1 class="pt-5">Latest posts</h1>
     <hr class="mb-5" />
     {% for post in posts %}
     <div class="row blog_post p-3 shadow my-4" style="max-width: 700px;">
@@ -27,13 +27,13 @@
         <a class="post_title" href="{% url 'post' slug=post.slug %}">
           <h3>{{ post.title }}</h3>
         </a>
-        <p class="text-light">
-          <span class="bg-primary py-1 px-2 mr-2 rounded">
+        <p class="text-primary mt-3" style="font-size: 1rem;">
+          <span class="border border-primary py-1 px-2 mr-2 rounded">
             <i class="fas fa-user"></i>
             <!-- Full name of user -->
             {{ post.owner.first_name }} {{ post.owner.last_name }}
           </span>
-          <span class="bg-primary py-1 pr-2 rounded">
+          <span class="border border-primary py-1 pr-2 rounded">
             <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
           </span>
         </p>
