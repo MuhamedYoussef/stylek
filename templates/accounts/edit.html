@@ -91,6 +91,15 @@
             </div>
           </div>
 
+          <select name="gender" class="custom-select">
+            <option {% if user.profile.gender == 'Select Gender' %}selected{%endif%} >
+              Select Gender
+            </option>
+            <option value="male" {% if user.profile.gender == 'male' %}selected{% endif %} >Male</option>
+            <option value="female" {% if user.profile.gender == 'female' %}selected{% endif %} >Female</option>
+            <option value="other" {% if user.profile.gender == 'other' %}selected{% endif %} >Other</option>
+          </select>
+
           <div class="form-group mt-4">
             <label for="bio">BIO</label>
             <textarea

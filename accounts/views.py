@@ -86,6 +86,7 @@ def edit(request):
         email = request.POST['email']
         username = request.POST['username']
         bio = request.POST['bio']
+        gender = request.POST['gender']
         image = request.FILES.get('img', False)
 
 
@@ -106,6 +107,8 @@ def edit(request):
         request.user.email = email.lower()
         request.user.username = username.lower()
         request.user.profile.bio = bio
+        request.user.profile.gender = gender
+        
         if image:
             request.user.profile.image = image
 
