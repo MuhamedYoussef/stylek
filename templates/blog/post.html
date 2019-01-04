@@ -7,18 +7,9 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 mt-5">
-        <img
-          src="
-            {% if post.image %}
-              {{ post.image.url }}
-            {%else%}
-              {{ post.image_url }}
-            {% endif %}"
-          class="img-fluid mx-auto my-auto d-block"
-          style="max-height:350px;"
-        />
-        <h1 class="post_title text-center pt-1">{{ post.title }}</h1>
-        <p class="text-center text-primary mt-2" style="font-size: 1rem;">
+        <h1 class="post_title pt-1">{{ post.title }}</h1>
+        <hr class="m-0 text-left" style="width: 70%;">
+        <p class="text-primary py-3" style="font-size: 1rem;">
           <span class="border border-primary py-1 px-2 mr-2 rounded">
             <i class="fas fa-user"></i>
             <!-- Full name of user -->
@@ -28,6 +19,16 @@
             <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
           </span>
         </p>
+        <img
+          src="
+            {% if post.image %}
+              {{ post.image.url }}
+            {%else%}
+              {{ post.image_url }}
+            {% endif %}"
+          class="img-fluid"
+          style="max-height:350px;"
+        />
         <div class="lead my-5 post_content font-weight-normal">
           <p>{{ post.content | linebreaks }}</p>
         </div>
