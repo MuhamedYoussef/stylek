@@ -3,11 +3,21 @@ from .models import Post
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 
 
 def blog(request):
+    posts = Post.objects.order_by('id')
+
+    if 'q' in request.GET:
+        query = request.GET['q']
+        if query:
+            posts = Post.objects.filter(
+                Q(title__icontains=query) | Q(content__icontains=query)
+            )
+
     context = {
-        'posts': Post.objects.order_by('id')
+        'posts': posts
     }
     return render(request, 'blog/blog.html', context)
 
