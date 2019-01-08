@@ -9698,7 +9698,8 @@ span.checked {
   border-radius: 0;
 }
 
-.card:hover, .blog_post:hover {
+.result > div > .card:hover,
+.blog_post:hover {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
 }

@@ -3,47 +3,100 @@
 <!-- blog content -->
 {% block content %}
 <main class="blog">
-  
-
   <section class="container my-5">
-    <h1 class="pt-5">Latest posts</h1>
-    <hr class="mb-5" />
-    {% for post in posts %}
-    <div class="row blog_post p-3 shadow my-4" style="max-width: 700px;">
-      <div class="col-sm-12 col-md-4 p-0 d-flex align-items-center">
-        <a href="{% url 'post' slug=post.slug %}">
-          <img
-            src="
+    <div class="row">
+      <div class="col-8">
+        <h1>Latest posts</h1>
+        <hr class="mb-5" />
+        {% for post in posts %}
+        <div class="row blog_post p-3 shadow my-4" style="max-width: 700px;">
+          <div class="col-sm-12 col-md-4 p-0 d-flex align-items-center">
+            <a href="{% url 'post' slug=post.slug %}">
+              <img
+                src="
             {% if post.image %}
               {{ post.image.url }}
             {%else%}
               {{ post.image_url }}
             {% endif %}"
-            class="img-fluid mx-auto my-auto d-block"
-          />
-        </a>
+                class="img-fluid mx-auto my-auto d-block"
+              />
+            </a>
+          </div>
+          <div class="col-sm-12 col-md-8">
+            <a class="post_title" href="{% url 'post' slug=post.slug %}">
+              <h3>{{ post.title }}</h3>
+            </a>
+            <p class="text-primary mt-3" style="font-size: 1rem;">
+              <span class="border border-primary py-1 px-2 mr-2 rounded">
+                <i class="fas fa-user"></i>
+                <!-- Full name of user -->
+                {{ post.owner.first_name }} {{ post.owner.last_name }}
+              </span>
+              <span class="border border-primary py-1 pr-2 rounded">
+                <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
+              </span>
+            </p>
+            <p class="post_content">
+              {{ post.summary }}...
+              <a href="{% url 'post' slug=post.slug %}">Read more</a>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
       </div>
-      <div class="col-sm-12 col-md-8">
-        <a class="post_title" href="{% url 'post' slug=post.slug %}">
-          <h3>{{ post.title }}</h3>
-        </a>
-        <p class="text-primary mt-3" style="font-size: 1rem;">
-          <span class="border border-primary py-1 px-2 mr-2 rounded">
-            <i class="fas fa-user"></i>
-            <!-- Full name of user -->
-            {{ post.owner.first_name }} {{ post.owner.last_name }}
-          </span>
-          <span class="border border-primary py-1 pr-2 rounded">
-            <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
-          </span>
-        </p>
-        <p class="post_content">
-          {{ post.summary }}...
-          <a href="{% url 'post' slug=post.slug %}">Read more</a>
-        </p>
+
+      <!-- Start Sidebar -->
+      <div class="col-4">
+        <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search For"
+                aria-label="search"
+                aria-describedby="button-addon2"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-primary"
+                  type="button"
+                  id="button-addon2"
+                >
+                  Go!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Categories</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">General</a></li>
+                  <li><a href="#">Face</a></li>
+                  <li><a href="#">Hair</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">Beauty</a></li>
+                  <li><a href="#">Fashion</a></li>
+                  <li><a href="#">Shopping</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- End of sidebar -->
     </div>
-    {% endfor %}
   </section>
 </main>
 {% endblock %}
