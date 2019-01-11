@@ -9554,17 +9554,17 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /* GLOBAL STYLES */
-img {
+body {
+  color: #333;
+}
+
+body img {
   max-width: 100%;
 }
 
-p {
+body p {
   font-size: 1.2rem;
   line-height: 1.2;
-}
-
-body {
-  color: #333;
 }
 
 textarea {
@@ -9586,23 +9586,16 @@ textarea {
   z-index: -10;
 }
 
+/* LANDING */
 .landing {
   top: 0;
   bottom: 0;
 }
 
-.about_bg {
-  top: 95vh;
-}
-
-.about_bg_extend {
-  top: 90vh;
-}
-
-/* LANDING */
 #landing_content {
   width: 100%;
-  height: 85vh;
+  height: 75vh;
+  background-attachment: fixed;
 }
 
 #landing_content .landing_text {
@@ -9612,32 +9605,18 @@ textarea {
   text-align: right;
 }
 
-/* SERVICES */
+/* Services Section */
 .services {
   width: 100%;
-  min-height: 120vh;
+  min-height: 110vh;
+  padding-top: 50px;
 }
 
-.services .service img {
-  width: 65%;
-}
-
-.services .service p {
-  width: 70%;
-}
-
-/* TRY US NOW */
-section.try {
-  width: 100%;
-  min-height: 50vh;
-  margin-top: 200px;
-  text-align: right;
-}
-
+/* Featured Section */
 /* Shopping Section */
 .shopping {
   width: 100%;
-  min-height: 80vh;
+  height: 130vh;
   padding: 200px 0px;
 }
 
@@ -9746,59 +9725,18 @@ span.checked {
     max-width: 80% !important;
     margin: 0 auto;
   }
-  .about_bg,
-  .about_bg_extend {
-    display: none;
-  }
   .services {
     text-align: center;
     padding: 35px 25px;
-    background-color: #fff3f3 !important;
-    border-radius: 0px 50px;
-  }
-  .services h2 {
-    font-size: 2.2rem;
-    font-weight: bold;
-  }
-  .services .service {
-    margin-bottom: 20px !important;
-  }
-  .services .service img {
-    width: 60% !important;
-  }
-  .services .service p {
-    padding: 0 !important;
-    margin-left: 0 !important;
   }
   .card {
     margin: 15px auto;
   }
 }
 
-@media (max-width: 768px) {
-  .about_bg_extend {
-    top: 105vh;
-  }
-  .about_bg {
-    top: 150vh !important;
-  }
-  .services h2 {
-    margin-bottom: 0 !important;
-  }
-  .services .service img {
-    width: 70%;
-  }
-  .services .service p {
-    width: 100%;
-  }
-}
-
 @media (max-width: 992px) {
   body#index {
     background: #c802de;
-  }
-  .about_bg {
-    top: 115vh;
   }
   .landing {
     top: 10vh;
@@ -9818,20 +9756,6 @@ span.checked {
   #landing_content #who {
     border-color: #f8f9fa !important;
     color: #f8f9fa !important;
-  }
-  .services h2 {
-    margin-bottom: 0 !important;
-  }
-  .try,
-  .shopping {
-    text-align: center !important;
-  }
-  .try h1,
-  .shopping h1 {
-    color: #f8f9fa !important;
-  }
-  .try a {
-    border-color: #f8f9fa !important;
   }
 }
 /*# sourceMappingURL=main.css.map */

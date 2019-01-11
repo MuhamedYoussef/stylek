@@ -4,18 +4,12 @@
 {% block content %}
 <body id="index">
   {% include 'partials/_message.html' %}
-  <section class="bg landing">
-    <img src="{% static 'img/landing_bg.svg' %}" alt="bg" />
-  </section>
-  <section class="bg about_bg_extend">
-    <img src="{% static 'img/about/about_bg_extend.svg' %}" alt="bg" />
-  </section>
-  <section class="bg about_bg">
-    <img src="{% static 'img/about/about_bg.svg' %}" alt="bg" />
-  </section>
 
   <!-- Landing section -->
   <section id="landing_content" class="container">
+    <div class="bg landing">
+      <img src="{% static 'img/landing_bg.svg' %}" alt="bg" />
+    </div>
     <div class="mb-5 landing_text">
       <h1 id="landing_header" class="m-0">BE YOUR</h1>
       <h1 id="landing_header" class="font-weight-bold m-0">OWN</h1>
@@ -41,96 +35,91 @@
   </section>
 
   <!-- Services Section -->
-  <section class="container mb-5 pb-5 services">
-    <h2 id="about_head" class="text-center text-primary py-4 display-4">
-      ABOUT OUR SERVICES
-    </h2>
+  <section class="pb-5 services text-center text-light">
+    <h1 id="about_head" class="text-center py-5">ABOUT OUR SERVICES</h1>
 
-    <div class="row mt-5">
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="service mb-5">
-          <img
-            src="{% static 'img/about/simple.svg' %}"
-            class="d-block mx-auto"
-            alt="simple"
-          />
-          <p class="h6 font-weight-bold text-primary mx-auto pt-2">
-            Time is everything, we do appreciate yours, our service is simple
-            and easy, just search about what you want and you will find it right
-            away!
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col shadow-lg p-3 m-2">
+          <h2>Search</h2>
+          <p>
+            Bunch of beauty salons, photographers, spa centers, weight control
+            centers and gyms all over Egypt
           </p>
         </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="service mb-5">
-          <img
-            src="{% static 'img/about/blog.svg' %}"
-            class="d-block mx-auto"
-            alt="blog"
-          />
-          <p class="h6 font-weight-bold text-primary mx-auto pt-2">
-            So existed part of our application is the blog, wonderful community
-            with amazing ideas
+        <div class="col shadow-lg p-3 m-2">
+          <h2>Blog</h2>
+          <p>
+            Wonderful community where you will find useful tips and tricks about
+            all what you need to know
           </p>
         </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="service">
-          <img
-            src="{% static 'img/about/shoping.svg' %}"
-            class="d-block mx-auto"
-            alt="shoping"
-          />
-          <p class="h6 font-weight-bold text-primary mx-auto pt-2">
-            It was never been easier, with our opening soon section for online
-            shopping store, get what you want or book it for buying later.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="service">
-          <img
-            src="{% static 'img/about/reliable.svg' %}"
-            class="d-block mx-auto"
-            alt="reliable"
-          />
-          <p class="h6 font-weight-bold text-primary mx-auto pt-2">
-            We are doing our best to keep all the information on the site up
-            dated and making sure it all true
+        <div class="col shadow-lg p-3 m-2">
+          <h2>Shopping</h2>
+          <p>
+            E-Commerce section where you will find latest fashion dress,
+            makeups, tools and more
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRY US NOW! -->
-  <section class="container try">
-    <div class="row pt-5">
-      <div class="col-12">
-        <h1 class="text-primary mb-4">TRY US NOW!</h1>
-        <a
-          class="btn btn-primary text-light px-5 font-weight-bold"
-          id="try_link"
-          href="{% url 'search' %}"
+  <!-- Featured Section -->
+  <section class="featured text-center bg-primary">
+    <div class="container py-5">
+      <h1 class="text-light py-5">Most Featured List</h1>
+      <div class="card-deck mx-auto px-5 pb-5">
+        {% for partner in partners %}
+        <div
+          class="card shadow mx-auto mb-2 text-center"
+          style="min-width: 15rem; max-width: 17rem;"
         >
-          SEARCH
-        </a>
+          <a href="{% url 'partner' partner.id %}">
+            <img
+              class="card-img-top"
+              src="{{ partner.main_photo.url }}"
+              alt="Partner Image"
+            />
+          </a>
+          <div class="card-body">
+            <!-- <h5 class="card-title">{{ partner.name }}</h5> -->
+          </div>
+          <ul class="list-group list-group-flush">
+            <p class="font-weight-bold">
+              Rating:
+              <span
+                class="fa fa-star {%if partner.rating >= 1%} checked {%endif%}"
+              ></span>
+              <span
+                class="fa fa-star {%if partner.rating >= 2%} checked {%endif%}"
+              ></span>
+              <span
+                class="fa fa-star {%if partner.rating >= 3%} checked {%endif%}"
+              ></span>
+              <span
+                class="fa fa-star {%if partner.rating >= 4%} checked {%endif%}"
+              ></span>
+              <span
+                class="fa fa-star {%if partner.rating >= 5%} checked {%endif%}"
+              ></span>
+            </p>
+          </ul>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
 
   <!-- SHOPPING -->
-  <section class="shopping text-center container">
+  <section class="shopping text-center text-light">
     <h1>Shopping Section</h1>
     <h4>We got all you need</h4>
     <button class="btn btn-light shadow px-4">Comming Soon..</button>
   </section>
 
   <!-- FOOTER -->
-  <footer class="mt-5 p-4">
+  <footer class="p-4">
     <div class="container">
       <div class="row py-5 mb-5">
         <div class="col-md-3 mb-5">
