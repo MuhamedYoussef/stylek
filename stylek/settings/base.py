@@ -1,44 +1,27 @@
 from django.contrib.messages import constants as messages
 import os
-import json
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(os.path.join(__file__,
+                                                                        os.pardir))))
 
 
-try:
-    with open(f'{BASE_DIR}/stylek/config.json') as f:
-        config = json.load(f)
-except:
-    pass
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY') or config['SECRET_KEY']
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG') or config['DEBUG']
-
-ALLOWED_HOSTS = ['stylek.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts.apps.AccountsConfig',
-    'partners.apps.PartnersConfig',
-    'pages.apps.PagesConfig',
-    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
+    'partners.apps.PartnersConfig',
+    'pages.apps.PagesConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +40,7 @@ ROOT_URLCONF = 'stylek.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,20 +54,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'stylek.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME') or config['DB_NAME'],
-        'USER': os.environ.get('DB_USER') or config['DB_USER'],
-        'PASSWORD': os.environ.get('DB_PASSWORD') or config['DB_PASSWORD'],
-        'HOST': os.environ.get('DB_HOST') or config['DB_HOST']
-    }
-}
 
 
 # Password validation
