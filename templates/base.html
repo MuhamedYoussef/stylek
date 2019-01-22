@@ -54,5 +54,14 @@
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/lightbox.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script type="module">
+      import jump from "{% static 'js/jump.module.js' %}";
+      $("#totop").on("click", function() {
+        jump(".navbar", {
+          // offset: -40,
+          duration: 1100
+        });
+      });
+    </script>
   </body>
 </html>

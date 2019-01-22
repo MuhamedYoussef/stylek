@@ -9612,7 +9612,6 @@ textarea {
   padding-top: 50px;
 }
 
-/* Featured Section */
 /* Shopping Section */
 .shopping {
   width: 100%;
@@ -9712,6 +9711,14 @@ span.checked {
 
 #message p {
   margin: 0;
+}
+
+#totop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
 }
 
 /*****************************************************/

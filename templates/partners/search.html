@@ -7,7 +7,7 @@
 <section class="container my-5">
   <form action="{% url 'search' %}">
     <div class="row mb-2">
-      <div class="col">
+      <div class="col-8">
         <input
           type="text"
           class="form-control"
@@ -16,7 +16,7 @@
           value="{{values.name}}"
         />
       </div>
-      <div class="col">
+      <div class="col-4 pl-0">
         <select name="city" class="custom-select">
           <option selected value="">All Cities</option>
           {% for key, value in cities.items %}
@@ -105,6 +105,11 @@
     </button>
   </form>
 </section>
+
+
+<button class="btn btn-primary shadow" id="totop">
+  <i class="fas fa-angle-up fa-1x" style="font-size: 1.5em;"></i>
+</button>
 
 <section class="container result mb-5">
   <h5 class="font-weight-bold  pb-3">Most Featured</h5>
