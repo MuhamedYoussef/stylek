@@ -1,90 +1,123 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %}
 
-
+<!-- Title Block -->
 {% block title %}| {{ partner.name }}{% endblock %}
 
+<!-- Content Block -->
 {% block content %}
 <body>
-  <section class="container">
-    <a href="javascript:history.back()" class="btn btn-light text-primary mt-4 mb-3">
-        <i class="fas fa-long-arrow-alt-left"></i> BACK
+  <section class="container mb-5">
+    <a
+      href="javascript:history.back()"
+      class="btn btn-outline-primary px-4 py-1 mt-4 mb-3"
+    >
+      <i class="fas fa-long-arrow-alt-left"></i> BACK
     </a>
     <div class="row">
       <div class="col-sm-12 col-md-4 mb-4">
-        <a href="{{partner.main_photo.url}}" data-lightbox="main">
+        <a href="{{ partner.main_photo.url }}" data-lightbox="main">
           <img
             class="partner_img_main mx-auto d-block shadow-sm"
-            src="{{partner.main_photo.url}}"
+            src="{{ partner.main_photo.url }}"
             alt="main"
           />
         </a>
       </div>
       <div class="col-sm-12 col-md-8">
-        <h3>{{partner.name}}</h3>
+        <h3>{{ partner.name }}</h3>
         {% if not partner.about == 'Not_available' %}
-        <p>{{partner.about}}</p>
+        <p>{{ partner.about }}</p>
         {% endif %}
         <h5 class="font-weight-bold mt-5">Categories:</h5>
         <p>
-        {% for cat in partner.cats %}
-          <span class="mr-3">{{cat}}</span> 
-        {% endfor %}
-      </p>
-      <p class="font-weight-bold">Rating:
-        <span class="fa fa-star {%if partner.rating >= 1%} checked {%endif%}"></span>
-        <span class="fa fa-star {%if partner.rating >= 2%} checked {%endif%}"></span>
-        <span class="fa fa-star {%if partner.rating >= 3%} checked {%endif%}"></span>
-        <span class="fa fa-star {%if partner.rating >= 4%} checked {%endif%}"></span>
-        <span class="fa fa-star {%if partner.rating >= 5%} checked {%endif%}"></span>
-      </p>
+          {% for cat in partner.cats %}
+          <!-- Categories -->
+          <span class="mr-3">{{ cat }}</span> {%endfor %}
+        </p>
+        <p class="font-weight-bold">
+          Rating:
+          <span
+            class="fa fa-star {%if partner.rating >= 1%} checked {%endif%}"
+          ></span>
+          <span
+            class="fa fa-star {%if partner.rating >= 2%} checked {%endif%}"
+          ></span>
+          <span
+            class="fa fa-star {%if partner.rating >= 3%} checked {%endif%}"
+          ></span>
+          <span
+            class="fa fa-star {%if partner.rating >= 4%} checked {%endif%}"
+          ></span>
+          <span
+            class="fa fa-star {%if partner.rating >= 5%} checked {%endif%}"
+          ></span>
+        </p>
       </div>
     </div>
     <br /><br />
     <div class="row mt-4">
       <div class="col-sm-12 col-md-4 mb-">
         <h5 class="font-weight-bold mb-3">More Detials</h5>
-        <hr>
+        <hr />
         {% if not partner.link == 'Not_available' %}
         <p class="font-weight-bold">
-          <a href="{{partner.link}}" target="_blank"><i class="fas fa-globe-africa"></i> Visit Website</a>
+          <a href="{{ partner.link }}" target="_blank"
+            ><i class="fas fa-globe-africa"></i> Visit Website</a
+          >
         </p>
         {% endif %}
-        <p><i class="fas fa-phone"></i> {{partner.number}}</p>
-        <p><i class="fas fa-map-marker"></i> {{partner.address}}</p>
+        <p><i class="fas fa-phone"></i> {{ partner.number }}</p>
+        <p><i class="fas fa-map-marker"></i> {{ partner.address }}</p>
       </div>
-      <div class="col-sm-12 col-md-8">
+      <div class="col-sm-12 col-md-8 p-0">
         <h5 class="font-weight-bold mb-3">Gallery</h5>
-        <a href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <a href="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <a href="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <!-- SECOND SECTION REPEATED -->
-        <a href="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <a href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <a href="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <!-- THIRD SECTION REPEATED -->
-        <a href="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <a href="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        <a href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" data-lightbox="images">
-          <img src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200" class="partner_img m-2 shadow-sm" />
-        </a>
-        
+        <div class="row">
+          {% if partner.list_images is not Null %}
+          <!-- partner list images -->
+          {% for img in partner.list_images %}
+          <div class="col-lg-3 col-md-4 col-sm-3 col-6 my-2">
+            <a href="{{ img }}" data-lightbox="images">
+              <img src="{{ img }}" class="partner_img shadow" />
+            </a>
+          </div>
+          {%endfor %}
+          <!-- Loop ends -->
+          {% else %}
+          <div class="col-lg-3 col-md-4 col-sm-3 col-6 my-2">
+            <a
+              href="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200"
+              data-lightbox="images"
+            >
+              <img
+                src="https://avatars.mds.yandex.net/get-pdb/225396/2bf1ef8e-08f2-431b-a2af-256ad019b62d/s1200"
+                class="partner_img m-2 shadow-sm"
+              />
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-3 col-6 my-2">
+            <a
+              href="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200"
+              data-lightbox="images"
+            >
+              <img
+                src="https://avatars.mds.yandex.net/get-pdb/225396/8aafa1b6-d083-41f6-8b4e-ba49d9d4f60e/s1200"
+                class="partner_img m-2 shadow-sm"
+              />
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-3 col-6 my-2">
+            <a
+              href="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200"
+              data-lightbox="images"
+            >
+              <img
+                src="https://avatars.mds.yandex.net/get-pdb/805781/9e44646b-dfd7-447c-bf9d-ee503453518d/s1200"
+                class="partner_img m-2 shadow-sm"
+              />
+            </a>
+          </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </section>

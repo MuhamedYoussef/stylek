@@ -12,8 +12,11 @@ class Partner(models.Model):
     cats = ArrayField(models.CharField(max_length=100))
     about = models.TextField(blank=True)
     rating = models.IntegerField(default=3)
-    main_photo = models.ImageField(upload_to='partners_profile', default='default.svg')
+    main_photo = models.ImageField(
+        upload_to='partners_profile', default='default.svg')
     # list of images
+    list_images = ArrayField(
+        models.CharField(max_length=300, blank=True), blank=True, null=True)
 
     def __str__(self):
         return self.name

@@ -108,40 +108,40 @@
 
 <section class="container result mb-5">
   <h5 class="font-weight-bold  pb-3">Most Featured</h5>
-  <div class="card-columns">
-    <!-- Cards -->
+  <div class="row mb-5 pb-5">
     {% for partner in partners %}
-      <div class="card shadow" style="width: 17rem;">
-        <a href="{% url 'partner' partner.id %}">
-          <img
-            class="card-img-top"
-            src="{{partner.main_photo.url}}"
-            alt="Card image cap"
-          />
-        </a>
-        <div class="card-body">
+      <div class="col-xlg-2 col-lg-3 col-md-4 col-sm-6 col-12 my-2">
+        <div class="card shadow partner" style="max-width: 17rem;height:100%;">
           <a href="{% url 'partner' partner.id %}">
-            <h6 class="card-title">{{partner.name}}</h6>
+            <img
+              class="card-img-top"
+              src="{{partner.main_photo.url}}"
+              alt="Card image cap"
+            />
           </a>
+          <div class="card-body">
+            <a href="{% url 'partner' partner.id %}">
+              <h6 class="card-title">{{partner.name}}</h6>
+            </a>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">City: {{partner.city}}</li>
+            <li class="list-group-item">
+              Rating: 
+              <span class="fa fa-star {%if partner.rating >= 1%} checked {%endif%}"></span>
+              <span class="fa fa-star {%if partner.rating >= 2%} checked {%endif%}"></span>
+              <span class="fa fa-star {%if partner.rating >= 3%} checked {%endif%}"></span>
+              <span class="fa fa-star {%if partner.rating >= 4%} checked {%endif%}"></span>
+              <span class="fa fa-star {%if partner.rating >= 5%} checked {%endif%}"></span>
+            </li>
+          </ul>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">City: {{partner.city}}</li>
-          <li class="list-group-item">
-            Rating: 
-            <span class="fa fa-star {%if partner.rating >= 1%} checked {%endif%}"></span>
-            <span class="fa fa-star {%if partner.rating >= 2%} checked {%endif%}"></span>
-            <span class="fa fa-star {%if partner.rating >= 3%} checked {%endif%}"></span>
-            <span class="fa fa-star {%if partner.rating >= 4%} checked {%endif%}"></span>
-            <span class="fa fa-star {%if partner.rating >= 5%} checked {%endif%}"></span>
-          </li>
-        </ul>
       </div>
     {% endfor %}
-    <!-- ends -->
   </div>
 
 
-  <nav aria-label="Page navigation mt-5">
+  <nav aria-label="Page navigation">
     {% if partners.has_other_pages %}
       <ul class="pagination justify-content-center">
 

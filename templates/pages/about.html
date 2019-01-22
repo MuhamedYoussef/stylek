@@ -1,20 +1,40 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %}
 
+<!-- Title Block -->
 {% block title %}| About{% endblock %}
 
+<!-- Content Block -->
 {% block content %}
 <section class="container mb-5 pb-5">
   <div class="my-5">
-    <img class="mx-auto d-block" src="{% static 'img/stylek.gif' %}" alt="Stylek">
-    <h3>About Stylek</h3>
-    <p>This project intend to provide information about beauty salons, spa centers photographers and gyms in Egypt. Aside that we have a wonderful blog with easy access to whatever field you prefer</p>
-    <h5>Current Features</h5>
-    <p>Search over tons of beauty salons in Egypt, findout who is near your district or city, access their phone number, address and website if avialable</p>
-    <h5>Upcomming Features</h5>
-    <p>Working now on the Blog section, will add more features in the profile page and will add the ability to add new Beauty salon or update existing one after validating the sourse as each beauty salon will has its own account</p>
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <img
+          class="mx-auto d-block"
+          src="{% static 'img/stylek.gif' %}"
+          alt="Stylek"
+        />
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <h3>About Stylek</h3>
+        <p>
+          Stylek is your home of fashion, we provide you with different kind of
+          things for your own beauty. Your number one choice when it comes to
+          check some beauty salons or makeup artists, buy your new awesome
+          clothes or communicate with experts at beauty field
+        </p>
+        <h5>Current Features</h5>
+        <p>
+          Search over tons of beauty salons in Egypt, findout who is near your
+          district or city, access their phone number, address and website if
+          avialable.
+        </p>
+        <h5>Upcomming Features</h5>
+        <p>Comming up soon, Biggest Fashion Online Store!</p>
+      </div>
+    </div>
   </div>
-  <div class="my-5"><hr></div>
+  <div class="my-5"><hr /></div>
   <div class="my-5">
     <h3 class="mt-5">Contact me</h3>
     <p>For any inquiry you can reach me directly through below mail</p>
