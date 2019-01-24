@@ -6,6 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Home of fashion and styles. In Stylek you can keep up with current fashion of clothes, makeup and more."
+    />
+    <meta property="og:title" content="Stylek" />
+    <meta property="og:type" content="style.fashion" />
+    <meta property="og:url" content="stylek.herokuapp.com" />
+    <meta property="og:image" content="{% static 'img/default.svg' %}" />
+    <title>Stylek {% block title %}{% endblock %}</title>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
@@ -19,7 +28,6 @@
     />
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <title>Stylek {% block title %}{% endblock %}</title>
 
     <style>
       .services {
@@ -58,7 +66,6 @@
       import jump from "{% static 'js/jump.module.js' %}";
       $("#totop").on("click", function() {
         jump(".navbar", {
-          // offset: -40,
           duration: 1100
         });
       });
